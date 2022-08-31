@@ -1,6 +1,6 @@
 ﻿namespace CSharp.No417;
 
-public static class Inputs
+public static class No417Inputs
 {
     public static int[][] Example1 = {
         new[] { 1, 2, 2, 3, 5 },
