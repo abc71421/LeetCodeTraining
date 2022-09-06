@@ -18,6 +18,47 @@ public static class Utils
         }
         Console.WriteLine();
     }
+
+    public static void ShowBinaryTree(TreeNode? root)
+    {
+        if (root == null)
+            return;
+
+        var queue = new Queue<TreeNode?>();
+        var list = new List<string>();
+        queue.Enqueue(root);
+        while (true)
+        {
+            var nodeCount = queue.Count;
+            if (nodeCount == 0)
+                break;
+            while (nodeCount > 0)
+            {
+                var node = queue.Peek();
+                queue.Dequeue();
+                if (node == null)
+                {
+                    list.Add("null");
+                }
+                else
+                {
+                    list.Add(node.val.ToString());
+                    if (node.left != null || node.right != null)
+                    {
+                        queue.Enqueue(node.left);
+                        queue.Enqueue(node.right);
+                    }
+                }
+                nodeCount--;
+            }
+        }
+
+        foreach (var variable in list.Select((value, i) => new { i, value }))
+        {
+            Console.Write(variable.i == 0 ? variable.value : $", {variable.value}");
+        }
+
+    }
 }
 
 public class TreeNode

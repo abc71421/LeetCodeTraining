@@ -1,7 +1,6 @@
-﻿using CSharp.No001;
-using CSharp.No417;
-using CSharp.No637;
+﻿using CSharp.No814;
 using CSharp.Utils;
+
 //----------------------------------------------using
 
 
@@ -31,6 +30,15 @@ using CSharp.Utils;
 
 #region 637
 
-Console.WriteLine(No637Inputs.Arg1[0]);
+//Console.WriteLine(No637Inputs.Arg1[0]);
 
+#endregion
+
+#region 814
+
+var output = No814.PruneTree(No814Inputs.Arg1[0]);
+
+//Utils.ShowBinaryTree(No814Inputs.Arg1[0]);
+
+Utils.ShowBinaryTree(output);
 #endregion
